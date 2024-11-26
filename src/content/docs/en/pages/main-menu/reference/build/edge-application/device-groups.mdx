@@ -95,6 +95,6 @@ However, for a request from `iPad Apple Webkit Mobile`, the device will be ident
 
 When setting up your rules, keep in mind that `User-Agent` headers for different devices can sometimes contain the same words. For instance: `Google Chrome Android` likely came from a mobile device while `Google Chrome Symbian` likely belongs to a desktop; both used the same Google Chrome application to access the application. Make sure to use precise wording when grouping devices.
 
+## Device Group Misclassification Clarification
 
-
-
+If you experience misclassification of devices into groups, it is important to review the regular expressions you have created for each group. Ensure that they are specific enough to differentiate between device types. You may also want to test the `User-Agent` strings of devices that are being misclassified to better understand how they match your regular expressions. This can help you refine your device groups for more accurate categorization. If further assistance is needed, please refer to the [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO DO THIS].
