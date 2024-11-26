@@ -1,8 +1,16 @@
-# Rules Engine for Edge Firewall
-
-Implement security logic, based on criteria and behaviors, with Rules Engine for Edge Firewall.
-
 ---
+title: Rules Engine for Edge Firewall
+description: >-
+  Implement security logic, based on criteria and behaviors, with Rules Engine
+  for Edge Firewall.
+meta_tags: 'edge computing, rules engine, azion, rules engine for edge firewall, rule sets'
+namespace: documentation_products_edge_firewall_rules_engine
+permalink: /documentation/products/secure/edge-firewall/rules-engine/
+---
+
+import LinkButton from 'azion-webkit/linkbutton'
+import RulesExecution from '~/includes/snippets/RulesEngineExecution/en/snippet.mdx'
+import Tag from 'primevue/tag'
 
 The **Rules Engine for Edge Firewall** is a feature designed to implement security logic for your applications. You can find the Rules Engine settings tab within a created edge firewall.
 
@@ -208,13 +216,13 @@ You can [debug rules created with Rules Engine for Edge Firewall](/en/documentat
 
 ## Testing Rules in a Staging Environment
 
-To ensure that your rules function correctly without impacting the production environment, it is recommended to test them in a staging environment. This allows you to simulate real traffic and evaluate the performance and behavior of your rules before deploying them live. 
+Before deploying your rules to production, it is crucial to test them in a staging environment. This allows you to verify that the rules behave as expected without affecting live traffic. Follow these steps to test your rules:
 
-### Steps to Test Rules
-
-1. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO SET UP A STAGING ENVIRONMENT].
-2. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO DEPLOY THE RULES IN THE STAGING ENVIRONMENT].
-3. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO MONITOR AND ANALYZE THE RESULTS].
+1. **Set up a Staging Environment:** Create a staging version of your application and configure it with the same rules as your production environment.
+2. **Simulate Traffic:** Use tools to simulate traffic to your staging environment to ensure that your rules trigger correctly under different scenarios.
+3. **Monitor and Analyze:** Monitor the behavior of your rules as you simulate traffic. Review logs and metrics to confirm that the expected behaviors are executed.
+4. **Adjust Rules as Necessary:** Based on your testing, make any necessary adjustments to your rules.
+5. **Deploy to Production:** Once testing is successful, deploy the rules to your production environment.
 
 ---
 
