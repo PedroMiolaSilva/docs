@@ -1,16 +1,8 @@
----
-title: Rules Engine for Edge Firewall
-description: >-
-  Implement security logic, based on criteria and behaviors, with Rules Engine
-  for Edge Firewall.
-meta_tags: 'edge computing, rules engine, azion, rules engine for edge firewall, rule sets'
-namespace: documentation_products_edge_firewall_rules_engine
-permalink: /documentation/products/secure/edge-firewall/rules-engine/
----
+# Rules Engine for Edge Firewall
 
-import LinkButton from 'azion-webkit/linkbutton'
-import RulesExecution from '~/includes/snippets/RulesEngineExecution/en/snippet.mdx'
-import Tag from 'primevue/tag'
+Implement security logic, based on criteria and behaviors, with Rules Engine for Edge Firewall.
+
+---
 
 The **Rules Engine for Edge Firewall** is a feature designed to implement security logic for your applications. You can find the Rules Engine settings tab within a created edge firewall.
 
@@ -151,7 +143,7 @@ In the Behaviors section of the Rules Engine, you must add the behaviors you wan
 For example, this behavior runs the specified function, allowing you to execute custom logic for handling requests.
 
 | Behavior | Argument |
-| --- | ---- |
+| --- | --- |
 | `Run Function` | `<name-of-the-instantiated-function>` |
 
 ### Deny (403 Forbidden)
@@ -211,6 +203,18 @@ It allows a customized response when the request matches the criteria. You can c
 ## Debugging rules
 
 You can [debug rules created with Rules Engine for Edge Firewall](/en/documentation/products/guides/debug-rules/) through the GraphQL API, Data Stream, or Real-Time Events.
+
+---
+
+## Testing Rules in a Staging Environment
+
+To ensure that your rules function correctly without impacting the production environment, it is recommended to test them in a staging environment. This allows you to simulate real traffic and evaluate the performance and behavior of your rules before deploying them live. 
+
+### Steps to Test Rules
+
+1. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO SET UP A STAGING ENVIRONMENT].
+2. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO DEPLOY THE RULES IN THE STAGING ENVIRONMENT].
+3. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO MONITOR AND ANALYZE THE RESULTS].
 
 ---
 
