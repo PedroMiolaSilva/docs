@@ -1,8 +1,30 @@
-# Secure an Infrastructure
+---
+title: Secure an infrastructure
+description: Use Origin Shield to secure your infrastructure.
+meta_tags: 'edge, security, infrastructure, origin shield'
+namespace: docs_secure_infrastructure
+menu_namespace: secureMenu
+permalink: /documentation/products/secure/secure-infrastructure/
+---
 
-Use Origin Shield to secure your infrastructure.
+import LinkButton from 'azion-webkit/linkbutton'
+import Tabs from '~/components/tabs/Tabs'
+import InterfaceNote from '~/includes/snippets/InterfaceNote/en/snippet.mdx'
 
-Origin Shield works as a list of IP/CIDR addresses used in Azion's Edge, providing assurance of safe IPs to allow access. The list is maintained by Azion and is available via Azion Console and API. However, each client must create automation to ensure their security policies are always up-to-date with the Origin Shield addresses. Misclassification of device groups may occur if the automation is not correctly set up to reflect the latest IP addresses.
+<InterfaceNote />
+
+Once you've [created an edge firewall and secured your application](/en/documentation/products/secure/secure-application/), you can use **Origin Shield** to secure your infrastructure by blocking threats.
+
+Origin Shield works as a list of IP/CIDR addresses used in Azion's Edge, thus providing assurance of safe IPs to allow access. The list is maintained by Azion and available via Azion Console and API, but each client must create automation to guarantee their security policies are always up-to-date with the Origin Shield addresses.
+
+---
+
+## Activating Origin Shield
+
+To activate the Origin Shield feature:
+
+1. Ensure that you have the required permissions and access for your account.
+2. Follow the necessary steps to enable the Origin Shield feature in your settings. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO DO THIS]
 
 ---
 
@@ -16,7 +38,7 @@ To access the Origin Shield list, you must have:
 
 ---
 
-## Step 2. Access the List of Addresses
+## Step 2. Access the list of addresses
 
 <Tabs client:visible>
     <Fragment slot="tab.console">Console</Fragment>
@@ -82,6 +104,6 @@ Clients with Origin Shield receive an email every time the list is updated and h
 
 ---
 
-## Step 3. Automate New Address Additions
+## Step 3. Automate new address additions
 
-After having access and checking the list of IP addresses provided by Origin Shield, you can create an automation with Rules Engine, ensuring your infrastructure is always protected with the most recent version of safe IPs. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO AUTOMATE THIS PROCESS]
+After having access and checking the list of IP addresses provided by Origin Shield, you can create an automation with Rules Engine, ensuring your infrastructure is always protected with the most recent version of safe IPs.
