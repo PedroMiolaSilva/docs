@@ -126,6 +126,13 @@ Still on the **Cache Settings** tab:
 Read more about setting up [cache settings](/en/documentation/products/build/edge-application/cache-settings/) for your edge applications.
 :::
 
+### Caching Effects on Video Playback
+
+Caching can significantly impact video playback quality and performance. It helps reduce latency by storing frequently accessed video segments closer to the end user. However, improperly configured caches can lead to issues such as stuttering playback or delays in loading segments. To optimize video playback:
+- Monitor cache hit ratios to ensure segments are being cached effectively.
+- Adjust the time-to-live (TTL) settings based on the nature of your video content.
+- Implement cache purging strategies for outdated or less relevant content to improve cache efficiency.  
+
 ### Creating Rules Engine rules
 
 <Tabs client:visible>
@@ -198,7 +205,8 @@ First, create a rule for the chunks:
 1. Click the **+ Rule** button.
 2. Give a name and a description (optional) to your rule.
 3. Select the **Request Phase** option.
-4. In **Criteria**, define `if ${uri}` *matches* `.\*.ts`.
+4. In **Criteria**, define `if ${uri}` *matches* `.
+*.ts`.
 5. In **Behaviors**, select **Set Cache Policy** and add the policy for the chunks you created in the previous step.
 6. Click the **Save** button.
 
@@ -217,7 +225,8 @@ Still on the application page, open the **Rules Engine** tab:
 First, create a rule for the chunks: 
 1. Click the **New Rule** button and select the **Request Phase** option.
 2. Give a name and a description (optional) to your rule.
-3. In **Criteria**, define `if ${uri}` *matches* `.\*.ts`.
+3. In **Criteria**, define `if ${uri}` *matches* `.
+*.ts`.
 4. In **Behaviors**, select **Set Cache Policy** and add the policy for the chunks you created in the previous step.
 5. Click the **Save** button.
 
@@ -238,5 +247,3 @@ Go to the [Rules Engine for Edge Application](/en/documentation/products/build/e
 :::
 
 <LinkButton link="/en/documentation/architectures/live-streaming-delivery/live-streaming-delivery-with-hls/" label="Go to Live Streaming Delivery architecture" severity="secondary" />
-
-

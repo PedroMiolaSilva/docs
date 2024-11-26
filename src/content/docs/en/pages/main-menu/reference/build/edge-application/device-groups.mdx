@@ -95,6 +95,15 @@ However, for a request from `iPad Apple Webkit Mobile`, the device will be ident
 
 When setting up your rules, keep in mind that `User-Agent` headers for different devices can sometimes contain the same words. For instance: `Google Chrome Android` likely came from a mobile device while `Google Chrome Symbian` likely belongs to a desktop; both used the same Google Chrome application to access the application. Make sure to use precise wording when grouping devices.
 
+---
 
+## Troubleshooting: Device Groups
 
+If you encounter issues when utilizing Device Groups, consider the following troubleshooting steps:
 
+1. **Check Regular Expressions**: Ensure that the regular expressions used for your device groups are correctly formatted and accurately identifying the intended devices.
+2. **Review User-Agent Headers**: Inspect the User-Agent headers being sent to understand how they match against your defined groups.
+3. **Test with Various Devices**: Utilize a range of devices to test the behavior of your application and verify that the correct device groups are being triggered.
+4. **Consult Documentation**: Refer to the Azion documentation for additional guidance on configuring and troubleshooting Device Groups.
+
+For further assistance, contact Azion support or visit the community forums for help.
