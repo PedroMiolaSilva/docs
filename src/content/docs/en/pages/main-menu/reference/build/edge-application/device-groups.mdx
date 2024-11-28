@@ -39,6 +39,21 @@ For example, you can create a device group called *Mobile* whose regular express
 (Mobile|iP(hone|od)|BlackBerry|IEMobile)
 ```
 
+## Creating and Managing Device Groups
+
+To create and manage device groups, follow these steps:
+
+1. Navigate to the Device Groups section within the Azion Console.
+2. Click on the **Create Device Group** button.
+3. Enter a name for your device group. It should be descriptive enough to indicate what devices will be included.
+4. Define a regular expression that matches the `User-Agent` strings of the devices you want to include in this group. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO DEFINE A REGULAR EXPRESSION].
+5. Save your device group.
+
+Once created, you can manage your device groups by:
+- Editing the name or regular expression of an existing group.
+- Deleting a device group that is no longer needed.
+- Viewing analytics related to the requests made by devices in each group. [TECHWRITER TODO: INSERT INFORMATION ABOUT VIEWING ANALYTICS].
+
 ## Implementation
 
 | Scope | Resource |
@@ -94,7 +109,3 @@ If the request is made by a device that contains `Android Tablet Mobile (Mozilla
 However, for a request from `iPad Apple Webkit Mobile`, the device will be identified as *Mobile* owing to the presence of `Mobile` within the request, despite `iPad` matching the *Tablet* device group.
 
 When setting up your rules, keep in mind that `User-Agent` headers for different devices can sometimes contain the same words. For instance: `Google Chrome Android` likely came from a mobile device while `Google Chrome Symbian` likely belongs to a desktop; both used the same Google Chrome application to access the application. Make sure to use precise wording when grouping devices.
-
-
-
-
