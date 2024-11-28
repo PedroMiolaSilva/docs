@@ -373,6 +373,30 @@ Here are a few examples of fields with an operator:
 | Like | hostLike: "%mysite.com%" | Searches everything for hosts with the particular `mysite.com` pattern and is *case-sensitive.* |
 | Ilike | hostIlike: "%mysite.com%" | Searches everything for hosts with the particular `mysite.com` pattern and is *case-insensitive*. |
 
+To perform a "NOT LIKE" query, you can use the `Ne` operator in combination with a `Like` or `Ilike` operator. Here is an example:
+
+```graphql
+query NotLikeQuery {
+  httpEvents(
+    limit: 10,
+    filter: {
+      requestUriNe: {
+        like: "%unwantedPattern%"
+      }
+    }
+    orderBy: [ts_ASC]
+  ) 
+  {
+    ts
+    remoteAddress
+    requestUri
+    stacktrace
+  }
+}
+```
+
+This query will return all `httpEvents` where the `requestUri` does not contain the "unwantedPattern" string.
+
 Depending on the [type of field of a dataset](/en/documentation/devtools/graphql-api/features/#datasets) you're querying for, you'll get to use different operators:
 
 | Field type | Possible operators |
@@ -385,4 +409,3 @@ Discover the essential role of operators in GraphQL queries. Watch the video bel
 <div class="cms-embed">
   <iframe width="600" height="400" src="https://www.youtube.com/embed/OGam-xrzuBA?si=cg-SIvWH8OedkrtY" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-
