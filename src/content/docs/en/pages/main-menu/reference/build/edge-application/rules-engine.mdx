@@ -15,6 +15,10 @@ import RulesExecution from '~/includes/snippets/RulesEngineExecution/en/snippet.
 
 **Rules Engine** is an **Edge Application** feature that handles the conditional execution of behaviors through logical operators. By using Rules Engine, you can build an architecture that provides better performance to your users while consuming fewer resources by processing at the edge.
 
+## Importance of the Rules Engine
+
+The Rules Engine is crucial for optimizing application performance and resource utilization. By processing requests at the edge, it reduces latency and server load, resulting in faster response times for end-users. It also allows for flexible and dynamic business logic implementation without the need for backend changes, enabling rapid adaptation to evolving requirements and scenarios.
+
 Each request made to an application built with Azion [Azion Console](https://console.azion.com/) is processed in a fixed sequence of two phases:
 
 1. **Request Phase**: takes place when a user submits a request to the edge application.
@@ -29,9 +33,6 @@ To trigger the intended behaviors for your application, you may employ variables
 :::caution
 Before you create a rule, you should enable the [Application Accelerator](/en/documentation/products/build/edge-application/application-accelerator/) module, which extends the usability of **Rules Engine** by applying serverless computing features to **Edge Application**. If the module is disabled, only some variables and behaviors will be available for your rule.
 :::
-
-## Importance of Rules Engine
-The **Rules Engine** plays a crucial role in optimizing the performance of edge applications. By allowing conditional logic to be executed at the edge, it reduces the latency experienced by end-users and minimizes the load on backend servers. This not only improves the overall user experience but also enhances resource efficiency, enabling applications to scale effectively while maintaining high performance levels. Furthermore, the ability to automate business logic through customizable rules allows for greater flexibility and responsiveness to changing conditions or user behaviors.
 
 ## Implementation
 
@@ -288,9 +289,9 @@ For example, to capture the path and name of a file in an HTTP request, you coul
 
 You may reference the capture variable as an array by using the notation `%{variable[index]}`. Because it's a local variable, you can only use it within the same rule you are setting up. In this example, if the URI is `/path/image.jpg`, the capture variable will have the following values:
 
-- `%{capture[0]} = "/path/image.jpg`"
-- `%{capture[1]} = "/path/`"
-- `%{capture[2]} = "image.jpg`"
+- `%{capture[0]} = "/path/image.jpg"`
+- `%{capture[1]} = "/path/"`
+- `%{capture[2]} = "image.jpg"`
 
 You can also name the indexes to reference them using names instead of a numeric index. To do so, use the `?&lt;name&gt;` notation as in the example:
 
