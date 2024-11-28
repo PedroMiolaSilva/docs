@@ -24,7 +24,7 @@ Learn more about [Edge Firewall modules](/en/documentation/products/secure/edge-
 
 Your **WAF Custom Allowed Rules** can be based on actual requests that were marked by WAF as possible threats. You can also allow a custom rule in case of tests and false positives.
 
-When creating custom allowed rules for a WAF configuration, it's necessary to choose between the available internal rules for its composition. 
+When creating custom allowed rules for a WAF configuration, it's necessary to choose between the available internal rules for its composition.
 
 See the list of all available internal rules below:
 
@@ -46,7 +46,7 @@ See the list of all available internal rules below:
 | 1002    | Possible SQL Injection attack: possible hex encoding `0x` found in Body, Path, Query String or Cookies.                                    |
 | 1003    | Possible SQL Injection attack: MySQL comment `/*` found in Body, Path, Query String or Cookies.                                            |
 | 1004    | Possible SQL Injection attack: MySQL comment `*/` found in Body, Path, Query String or Cookies.                                            |
-| 1005    | Possible SQL Injection attack: MySQL keyword `\|` found in Body, Path, Query String or Cookies.                                            |
+| 1005    | Possible SQL Injection attack: MySQL keyword `|` found in Body, Path, Query String or Cookies.                                             |
 | 1006    | Possible SQL Injection attack: MySQL keyword `&&` found in Body, Path, Query String or Cookies.                                            |
 | 1007    | Possible SQL Injection attack: MySQL comment `--` found in Body, Path, Query String or Cookies.                                            |
 | 1008    | Possible SQL Injection or XSS attack: semicolon `;` found in Body, Path or Query String.                                                   |
@@ -72,7 +72,7 @@ See the list of all available internal rules below:
 | 1199    | Possible RCE attack: validation with `log4j` (Log4Shell) in Body, Path, Query String, Headers, or Cookies.                                 |
 | 1200    | Possible Directory Traversal attack: double dot `..` found in Body, Path, Query String or Cookies.                                         |
 | 1202    | Possible Directory Traversal attack: obvious probe `/etc/passwd` found in Body, Path, Query String or Cookies.                             |
-| 1203    | Possible Directory Traversal attack: obvious Windows path `c:\\` found in Body, Path, Query String or Cookies.                             |
+| 1203    | Possible Directory Traversal attack: obvious Windows path `c:\\` found in Body, Path, Query String or Cookies.                           |
 | 1204    | Possible Directory Traversal attack: obvious probe `cmd.exe` found in Body, Path, Query String or Cookies.                                 |
 | 1205    | Possible Directory Traversal attack: backslash `\` found in Body, Path, Query String or Cookies.                                           |
 | 1206    | Possible Directory Traversal attack: slash `/` found in Body, Query String, or Cookies.                                                    |
@@ -86,13 +86,16 @@ See the list of all available internal rules below:
 | 1311    | Possible XSS attack: close square bracket `]` found in Body, Path, Query String or Cookies.                                                |
 | 1312    | Possible XSS attack: tilde character `~` found in Body, Path, Query String, or Cookies.                                                    |
 | 1314    | Possible XSS attack: <code>`</code> (*backtick*) found in Body, Path, Query String, or Cookies.                                            |
-| 1315    | Possible XSS attack: double encoding `%[2\|3]` found in Body, Path, Query String or Cookies.                                               |
+| 1315    | Possible XSS attack: double encoding `%[2|3]` found in Body, Path, Query String or Cookies.                                               |
 | 1400    | Possible trick to evade protection: UTF7/8 encoding `&#` found in Body, Path, Query String or Cookies.                                     |
 | 1401    | Possible trick to evade protection: MS encoding `%U` found in Body, Path, Query String or Cookies.                                         |
 | 1402    | Possible trick to evade protection: encoded chars `%20-%3F` found in Body, Path, Query String or Cookies.                                  |
 | 1500    | Possible File Upload attempt: `asp/php` or `.ph`, `.asp`, `.ht` found in filename in a multipart POST containing a file.                   |
 
+## Testing Rules in a Staging Environment
+
+To ensure that your custom allowed rules are effective and do not interfere with legitimate traffic, it is recommended to test these rules in a staging environment before applying them to production. This allows you to monitor and adjust the rules based on actual traffic patterns and potential false positives.
+
+[TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO SET UP AND TEST RULES IN A STAGING ENVIRONMENT]
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uhpoeBXLvxk?si=eb8Jx_LRaUq1FBlh" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-
