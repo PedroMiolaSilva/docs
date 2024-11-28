@@ -8,13 +8,24 @@ namespace: docs_grafana_metrics_events_dash_json
 permalink: /documentation/products/real-time-metrics/metrics-dash/
 ---
 
-Follow the steps described in [How to query GraphQL data on Grafana Cloud](/en/documentation/products/guides/graphql-grafana-cloud/) and then use the following JSON with the `https://api.azionapi.net/metrics/graphql` URL to create a dashboard on Grafana with data from the Real-Time Metrics GraphQL API such as:
+## How to Use Azion's GraphQL API with Grafana
 
-- Total Requests
-- Cache Requests
-- Status Codes
-- Top 10 Request URI
-- Top 10 Hosts
+Azion provides a GraphQL API that you can use to query real-time metrics. To use Azion's GraphQL API with Grafana, follow these steps:
+
+1. **Set Up Grafana**
+   - [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO SET UP GRAFANA FOR AZION'S GRAPHQL API]
+
+2. **Create a Data Source**
+   - Add a new data source in Grafana using the URL `https://api.azionapi.net/metrics/graphql`.
+   - [TECHWRITER TODO: INSERT INFORMATION ABOUT AUTHENTICATION AND API ACCESS REQUIREMENTS]
+
+3. **Import the Dashboard**
+   - Use the JSON provided below to import a dashboard into Grafana. This dashboard visualizes data from Azion's Real-Time Metrics GraphQL API, including:
+     - Total Requests
+     - Cache Requests
+     - Status Codes
+     - Top 10 Request URI
+     - Top 10 Hosts
 
 ```json
 {
@@ -792,6 +803,4 @@ Follow the steps described in [How to query GraphQL data on Grafana Cloud](/en/d
 }
 ```
 
-
-
-
+For more detailed instructions on querying GraphQL data on Grafana Cloud, refer to [How to query GraphQL data on Grafana Cloud](/en/documentation/products/guides/graphql-grafana-cloud/).
