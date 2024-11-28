@@ -95,6 +95,8 @@ However, for a request from `iPad Apple Webkit Mobile`, the device will be ident
 
 When setting up your rules, keep in mind that `User-Agent` headers for different devices can sometimes contain the same words. For instance: `Google Chrome Android` likely came from a mobile device while `Google Chrome Symbian` likely belongs to a desktop; both used the same Google Chrome application to access the application. Make sure to use precise wording when grouping devices.
 
+## Impact of Misconfigured Device Groups
 
+Misconfigured device groups can lead to incorrect content delivery behaviors, resulting in suboptimal user experiences. For example, if mobile devices are incorrectly classified as desktop devices, they may receive desktop versions of the application that are not optimized for their screens. Conversely, desktop users may receive mobile versions, which can affect functionality and usability. It is essential to regularly review your device group configurations and test them to ensure they align with the actual user experience.
 
-
+---
