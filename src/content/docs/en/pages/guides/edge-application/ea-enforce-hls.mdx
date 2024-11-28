@@ -2,7 +2,7 @@
 title: How to enforce HLS cache for live streaming delivery
 description: >-
   This guide covers the step-by-step to enforce HLS cache, managing chunks and
-  playlists caching, and setting up Rules Engine rules.
+  playlists caching, and setting up Rules Engine rules. It also highlights the benefits of uploading cache policies.
 meta_tags: 'architecture, content delivery, hls, edge computing'
 namespace: docs_guides_enforce_hls_cache
 permalink: /documentation/products/guides/enforce-hls-cache/
@@ -15,6 +15,14 @@ import InterfaceNote from '~/includes/snippets/InterfaceNote/en/snippet.mdx'
 <InterfaceNote />
 
 Azion Edge Platform allows you to [deliver live streaming content in HLS format](https://www.azion.com/en/solutions/live-streaming-delivery/), being able to easily self-provision and configure your cache policies. This guide covers the step-by-step to enforce HLS cache, managing chunks and playlists caching, and setting up rules engines rules.
+
+## Benefits of Uploading Cache Policies
+
+Uploading cache policies for HLS streaming can greatly enhance your content delivery performance. Some key benefits include:
+- **Improved Load Times**: By caching chunks and playlists, you can reduce latency and improve the load times for end-users.
+- **Reduced Server Load**: Efficient caching minimizes repeated requests to your origin servers, thereby reducing server load and associated costs.
+- **Better Scalability**: As your audience grows, caching helps maintain performance without the need for additional infrastructure.
+- **Enhanced User Experience**: With faster load times and smoother streaming, users are likely to have a better experience, leading to increased engagement.
 
 ---
 
@@ -47,7 +55,7 @@ First, you must to create a cache policy for the chunks:
 3. Enable Tiered Cache for your application: `$ azion update edge-application --application-id 1234 --l2-caching true`
 4. Create an origin: `$ azion create origin --application-id 1234 --name "origin-edge" --origin-type single_origin --addresses "example.com" --host-header "example.com"`
 5. Configure the cache policy for the chunks: `$ azion create cache-setting --application-id 1234 --name "chunks-policy" --browser-cache-settings "override" --browser-cache-settings-maximum-ttl 0 --cdn-cache-settings "override" --cnd-cache-settings-maximum-ttl 60`
-- Define **Advanced Cache Key** behavoirs according to your needs. Check the optional flags for the [create command](/en/documentation/devtools/cli/create/#optional-flags-3).
+- Define **Advanced Cache Key** behaviors according to your needs. Check the optional flags for the [create command](/en/documentation/devtools/cli/create/#optional-flags-3).
 - The recommendation is selecting **Content does not vary**, for **Query String** and/or **Cookies**, according to your needs.
 </Fragment>
 
@@ -92,7 +100,7 @@ First, you must to create a cache policy for the chunks:
 
 <Fragment slot="panel.cli">
 Now configure the cache policy for the playlist: `$ azion create cache-setting --application-id 1234 --name "playlist-policy" --browser-cache-settings "override" --browser-cache-settings-maximum-ttl 0 --cdn-cache-settings "override" --cnd-cache-settings-maximum-ttl 5`
-- Define **Advanced Cache Key** behavoirs according to your needs. Check the optional flags for the [create command](/en/documentation/devtools/cli/create/#optional-flags-3).
+- Define **Advanced Cache Key** behaviors according to your needs. Check the optional flags for the [create command](/en/documentation/devtools/cli/create/#optional-flags-3).
 - The recommendation is selecting **Content does not vary**, for **Query String** and/or **Cookies**, according to your needs.
 </Fragment>
 
@@ -198,7 +206,7 @@ First, create a rule for the chunks:
 1. Click the **+ Rule** button.
 2. Give a name and a description (optional) to your rule.
 3. Select the **Request Phase** option.
-4. In **Criteria**, define `if ${uri}` *matches* `.\*.ts`.
+4. In **Criteria**, define `if ${uri}` *matches* `.\\*.ts`.
 5. In **Behaviors**, select **Set Cache Policy** and add the policy for the chunks you created in the previous step.
 6. Click the **Save** button.
 
@@ -217,7 +225,7 @@ Still on the application page, open the **Rules Engine** tab:
 First, create a rule for the chunks: 
 1. Click the **New Rule** button and select the **Request Phase** option.
 2. Give a name and a description (optional) to your rule.
-3. In **Criteria**, define `if ${uri}` *matches* `.\*.ts`.
+3. In **Criteria**, define `if ${uri}` *matches* `.\\*.ts`.
 4. In **Behaviors**, select **Set Cache Policy** and add the policy for the chunks you created in the previous step.
 5. Click the **Save** button.
 
@@ -238,5 +246,3 @@ Go to the [Rules Engine for Edge Application](/en/documentation/products/build/e
 :::
 
 <LinkButton link="/en/documentation/architectures/live-streaming-delivery/live-streaming-delivery-with-hls/" label="Go to Live Streaming Delivery architecture" severity="secondary" />
-
-
