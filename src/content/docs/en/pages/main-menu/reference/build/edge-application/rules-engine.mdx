@@ -5,39 +5,12 @@ description: >-
   Console, automating your business logic and improving performance and
   throughput for your application.
 meta_tags: 'edge applications, rules engine'
-namespace: documentation_products_edge_applications_rules_engine
-permalink: /documentation/products/build/edge-application/rules-engine/
----
-import LinkButton from 'azion-webkit/linkbutton';
-import Tag from 'primevue/tag';
-import TableContainer from "~/components/Table/TableContainer.astro";
-import RulesExecution from '~/includes/snippets/RulesEngineExecution/en/snippet.mdx';
-
-**Rules Engine** is an **Edge Application** feature that handles the conditional execution of behaviors through logical operators. By using Rules Engine, you can build an architecture that provides better performance to your users while consuming fewer resources by processing at the edge.
-
-Each request made to an application built with Azion [Azion Console](https://console.azion.com/) is processed in a fixed sequence of two phases:
-
-1. **Request Phase**: takes place when a user submits a request to the edge application.
-2. **Response Phase**: occurs when a user receives a response from the edge application.
-
-At each processing phase, you can define a set of rules to handle the request according to the needs of your application. Once you've selected in which of the two phases your rule will be executed, you'll be able to create a new rule.
-
-Rules are designed to follow a conditional *if-then* logic. Every rule is composed of **Criteria** (*if*) that will define the set of conditions that must be met for the execution of **Behaviors** (*then*).
-
-To trigger the intended behaviors for your application, you may employ variables, comparison operators, and logical operators. If the given conditions are met, the behaviors associated with each rule are executed sequentially until all the rules have been processed.
-
-:::caution
-Before you create a rule, you should enable the [Application Accelerator](/en/documentation/products/build/edge-application/application-accelerator/) module, which extends the usability of **Rules Engine** by applying serverless computing features to **Edge Application**. If the module is disabled, only some variables and behaviors will be available for your rule.
-:::
-
-## Implementation
-
-| Scope | Resource |
-| --- | --- |
+namesp...  | --- | --- |
 | Edge Application first steps | [First steps](/en/documentation/products/build/edge-application/first-steps/) |
 | Creating a rule | [Creating rules using Rules Engine for Edge Application](/en/documentation/products/guides/rules-engine/) |
 | Creating a cache setting | [How to configure cache policies for Edge Application](/en/documentation/products/guides/cache-settings/) |
 | Mitigating HTTPoxy using rules | [How to mitigate the HTTPOxy vulnerability](/en/documentation/products/guides/mitigating-a-vulnerability-httpoxy/) |
+| Availability of the Edge Application | [TECHWRITER TODO: INSERT INFORMATION ABOUT THE AVAILABILITY OF THE EDGE APPLICATION] |
 
 ---
 
@@ -285,9 +258,9 @@ For example, to capture the path and name of a file in an HTTP request, you coul
 
 You may reference the capture variable as an array by using the notation `%{variable[index]}`. Because it's a local variable, you can only use it within the same rule you are setting up. In this example, if the URI is `/path/image.jpg`, the capture variable will have the following values:
 
-- `%{capture[0]} = "/path/image.jpg"`
-- `%{capture[1]} = "/path/"`
-- `%{capture[2]} = "image.jpg"`
+- `%{capture[0]} = "/path/image.jpg`"
+- `%{capture[1]} = "/path/`"
+- `%{capture[2]} = "image.jpg`"
 
 You can also name the indexes to reference them using names instead of a numeric index. To do so, use the `?&lt;name&gt;` notation as in the example:
 
