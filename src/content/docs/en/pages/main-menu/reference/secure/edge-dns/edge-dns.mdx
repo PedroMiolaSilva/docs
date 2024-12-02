@@ -3,7 +3,7 @@ title: Edge DNS
 description: >-
   Host domains, DNS zones, and records with Azion routing solutions and Edge
   DNS.
-meta_tags: 'Edge DNS, DNS, routring'
+meta_tags: 'Edge DNS, DNS, routing'
 namespace: documentation_products_intelligent_dns
 permalink: /documentation/products/secure/edge-dns/
 ---
@@ -142,7 +142,7 @@ The accepted value's format varies according to the chosen record type.
 | NS    | It must be in FQDN format or be an IP address.<br /><br />Maximum of 10 records (one per line).<br /><br />An NS can't be configured by the main domain of the zone (naked domain).<br /><br />It must point to the servers that have authority over that record. | `ns1.aziondns.net`<br /><br /> `ns2.aziondns.net` |
 | PTR   | Reverse zones lined to IPv6 addresses follow other rules. | After creating a reverse zone, you must create a type PTR record associated with it.<br /><br /> `www.exemplo.com` |
 | SRV   | The zone name must have the following format: `_service._protocol.name`. Example: `_ldap._tcp.azionsrv"`.<br /><br />The response values must be in the format `[priority] [weight] [port] [target]`.<br /><br />Maximum of 10 records (one per line).<br /><br />It must point to the host name that has an A or AAAA record.<br /><br />**Note**: Edge DNS won't validate this automatically. | `0 60 5060 bigbox.example.com` |
-| TXT   | Limited to 1000 characters.<br /><br />Text that is separated by ENTER is considered as different responses by Edge DNS | This domain name is reserved for use in documentation.<br /><br /> `"printer=lpr5"`<br /><br /> `"favorite drink=orange juice"` |
+| TXT   | Limited to 1000 characters.<br /><br />Text that is separated by ENTER is considered as different responses by Edge DNS | This domain name is reserved for use in documentation.<br /><br /> "printer=lpr5"<br /><br /> "favorite drink=orange juice" |
 
 You can set up a domain, such as `www.domain.com`, to be used as a naked domain, that is, only `domain.com`. There are two ways to configure this:
 
@@ -197,7 +197,7 @@ It's important to verify that all your records are properly registered and teste
 The **Domain Name System Security Extensions (DNSSEC)** is a feature of the *Domain Name System (DNS)* that authenticates responses to domain name lookups. It doesn't provide privacy protections for those lookups but prevents attackers from manipulating or poisoning the responses to DNS requests.
 
 <LinkButton link="/en/documentation/products/secure/edge-dns/dnssec-compatibility/" label="go to DNSSEC compatibility reference" severity="secondary" /> 
- 
+
 
 ---
 
@@ -205,8 +205,28 @@ The **Domain Name System Security Extensions (DNSSEC)** is a feature of the *Dom
 
 **Massive Redirect** is Azion's serverless integration for processing many simultaneous redirects. It can be used where there is a need to change a significant number of addresses, for example, in domain migrations.
 
-To configure massive redirection for domain migration, access the [Massive Redirect](/en/documentation/products/guides/massive-redirect-integration/) documentation. 
+To configure massive redirection for domain migration, access the [Massive Redirect](/en/documentation/products/guides/massive-redirect-integration/) documentation.  
 
+---
 
+## Automating DNS Record Management with Azion API
 
+Azion provides an API that allows you to automate the management of your DNS records. This can be particularly useful for integrating with CI/CD pipelines or managing a large number of records efficiently.
 
+### Using Azion API for DNS Record Management
+
+1. **Authenticate**: Obtain an API token from your Azion account to authenticate your requests.
+
+2. **API Endpoints**: Utilize the appropriate API endpoints to create, update, delete, or retrieve DNS records. Refer to the [Azion API documentation](/en/documentation/products/api/azion-api/) for a comprehensive list of endpoints and their usage.
+
+3. **Automation Scripts**: Write scripts in your preferred programming language to interact with the Azion API. This allows you to automate tasks such as updating DNS records when deploying new services.
+
+4. **Error Handling**: Implement error handling in your scripts to manage API response errors effectively.
+
+5. **Logging and Monitoring**: Set up logging and monitoring to track API request status and performance.
+
+[TECHWRITER TODO: INSERT INFORMATION ABOUT SPECIFIC EXAMPLES OR USE CASES FOR USING AZION API IN DNS MANAGEMENT]
+
+For more detailed guidance on using Azion API, visit the [Azion API Guide](/en/documentation/products/api/azion-api-guide/).
+
+<LinkButton link="/en/documentation/products/api/azion-api-guide/" label="go to Azion API guide" severity="secondary" />
