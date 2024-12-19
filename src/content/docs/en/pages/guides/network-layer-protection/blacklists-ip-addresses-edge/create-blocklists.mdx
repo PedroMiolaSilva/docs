@@ -26,7 +26,7 @@ Network Lists can be based on user's IP addresses, ASN, and geolocation addresse
 
 ---
 
-To create, manage, and use Network Lists, you must to complete the following steps:
+To create, manage, and use Network Lists, you must complete the following steps:
 
 1. Create an edge firewall with the **Network Layer Protection** module activated.
 2. Create a **Network List**.
@@ -202,4 +202,12 @@ In this example, if the conditions set by the rules are met, a *drop* will be ru
 
 </Tabs>
 
+## Criteria for Creating Rules
 
+When creating rules for Network Lists in the Edge Firewall, the following criteria can be considered:
+
+1. **IP Address** - Specify individual IP addresses or a range using CIDR notation.
+2. **ASN (Autonomous System Number)** - Use to block or allow traffic from specific networks identified by ASNs.
+3. **Geolocation** - Restrict or permit access based on country selection.
+
+These criteria help in fine-tuning access control and securing applications by allowing or blocking traffic based on specific network attributes.
