@@ -23,8 +23,33 @@ See the steps described in this guide to investigate requests and the next steps
 
 1. Make sure you're logged in on your Azion account, via [Real-Time Manager](https://manager.azion.com/) or via [Console](https://console.azion.com).
 2. Access Real-Time Events GraphQL API playground going to the following link: `https://manager.azion.com/events/graphql`.
-  - You must be logged in to your Azion account. Otherwise, you'll receive an error message.
+   - You must be logged in to your Azion account. Otherwise, you'll receive an error message.
 3. Create a query with the filter and time range you want to use.
+4. To query requests using a regex, modify your query filter to include a regex condition. For example, to filter requests with a specific pattern in the `requestUri`, you can use:
+
+```graphql
+query requestsInvestigationRegex {
+  httpEvents(
+    limit: 100,
+    filter: {
+      tsRange: {begin:"2024-03-20T10:10:10", end:"2024-03-27T10:10:10"}
+
+      geolocCountryNameNotIn: ["Chile"]
+      hostIn: ["myhost.net", "anotherhost.com"]
+      requestUriRegex: "^/api/v[0-9]+/"
+    }
+    aggregate: {count: requestUri}
+    groupBy: [host, requestUri, status]
+    orderBy: [count_DESC]
+  )
+  {
+    requestUri
+    host
+    status
+    count
+  }
+}
+```
 
 ---
 
@@ -274,4 +299,3 @@ Here are some other options of queries you can use to investigate and monitor at
 
 - [ASN query](https://github.com/aziontech/azion-queries/blob/main/queries/top-queries/events/top-ip-country.gql)
 - [stacktrace query](https://github.com/aziontech/azion-queries/blob/main/queries/top-queries/events/top-stacktrace.gql)
-
