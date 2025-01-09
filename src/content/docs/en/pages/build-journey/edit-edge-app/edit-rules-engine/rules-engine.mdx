@@ -45,6 +45,9 @@ The `Server` header stores information about the server that generated the respo
 Exercise caution when removing any headers from your edge application and ensure that this action doesn't interfere in any applicable standards and guidelines.
 :::
 
+### Criteria for Creating Rules
+When defining criteria for rules, it's important to select variables and operators that precisely match the conditions you want to apply. For example, using the `${uri}` variable with the **starts with** operator and the `/` argument specifies a rule targeting all requests with URIs starting with `/`. Be aware that "NetworkList America" is not a strict criterion and should be used according to your application requirements.
+
 To remove the `Server` header:
 
 1. Navigate to the **Rules Engine** tab.
@@ -73,6 +76,9 @@ The `Server` header stores information about the server that generated the respo
 :::note
 Exercise caution when removing any headers from your edge application and ensure that this action doesn't interfere in any applicable standards and guidelines.
 :::
+
+### Criteria for Creating Rules
+When defining criteria for rules, it's important to select variables and operators that precisely match the conditions you want to apply. For example, using the `${uri}` variable with the **starts with** operator and the `/` argument specifies a rule targeting all requests with URIs starting with `/`. Be aware that "NetworkList America" is not a strict criterion and should be used according to your application requirements.
 
 To remove the `Server` header:
 
@@ -169,5 +175,3 @@ Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI spe
 </Fragment>
 
 </Tabs>
-
-
