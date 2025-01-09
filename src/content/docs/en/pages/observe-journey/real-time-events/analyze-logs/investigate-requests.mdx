@@ -257,6 +257,38 @@ If you notice there's legitimate requests from other countries being blocked by 
 
 ---
 
+## Step 3. Using Regex in Queries
+
+To query requests using a regex configuration, you can utilize the `requestUri` field in your GraphQL queries. This allows you to filter requests based on patterns in the URI.
+
+1. On [Real-Time Events GraphQL's playground](https://manager.azion.com/events/graphql), you can use a query like the following:
+
+```graphql
+query requestsInvestigationWithRegex {
+  httpEvents(
+    limit: 100,
+    filter: {
+      tsRange: {begin:"2024-03-20T10:10:10", end:"2024-03-27T10:10:10"}
+
+      requestUriMatches: "/api/.*"
+
+    }
+    aggregate: {count: requestUri}
+    groupBy: [requestUri, status]
+    orderBy: [count_DESC]
+  )
+  {
+    requestUri
+    status
+    count
+  }
+}
+```
+
+2. This query will return requests where the `requestUri` matches the pattern `/api/.*`, allowing you to filter based on URI patterns.
+
+---
+
 ## Other secure configuration options
 
 If you don't want to block all requests from a country through a network list, there are other features of Azion [Secure products](/en/documentation/products/secure/overview/) you can use.
@@ -274,4 +306,3 @@ Here are some other options of queries you can use to investigate and monitor at
 
 - [ASN query](https://github.com/aziontech/azion-queries/blob/main/queries/top-queries/events/top-ip-country.gql)
 - [stacktrace query](https://github.com/aziontech/azion-queries/blob/main/queries/top-queries/events/top-stacktrace.gql)
-
