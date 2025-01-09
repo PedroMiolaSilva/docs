@@ -26,6 +26,28 @@ See the steps described in this guide to investigate requests and the next steps
   - You must be logged in to your Azion account. Otherwise, you'll receive an error message.
 3. Create a query with the filter and time range you want to use.
 
+## Filtering Logs Using LIKE Parameter
+
+To perform queries using patterns like regex, you can use the `LIKE` parameter in your GraphQL queries to filter logs in Real-Time Events. For instance, if you want to filter requests where the `requestUri` matches a specific pattern, you can use:
+
+```graphql
+query requestsLikeFilter {
+  httpEvents(
+    limit: 100,
+    filter: {
+      requestUri_like: "^/api/.*"
+    }
+  )
+  {
+    requestUri
+    status
+    count
+  }
+}
+```
+
+This query filters all requests with `requestUri` starting with `/api/`.
+
 ---
 
 ## Step 1. Investigating countries
@@ -268,10 +290,20 @@ If you use other configurations, modify your GraphQL API query filters to match 
 
 ---
 
+## Debug Rules Feature for Improved Logging
+
+The Debug Rules feature can be enabled within the Edge Application and Edge Firewall to improve logging and facilitate investigation of issues. 
+
+1. Access your Edge Application or Edge Firewall.
+2. Navigate to the Debug Rules section.
+3. Enable the Debug Rules feature.
+4. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO USE DEBUG RULES FOR LOGGING].
+
+---
+
 ## Other monitoring queries
 
 Here are some other options of queries you can use to investigate and monitor attacks:
 
 - [ASN query](https://github.com/aziontech/azion-queries/blob/main/queries/top-queries/events/top-ip-country.gql)
 - [stacktrace query](https://github.com/aziontech/azion-queries/blob/main/queries/top-queries/events/top-stacktrace.gql)
-
