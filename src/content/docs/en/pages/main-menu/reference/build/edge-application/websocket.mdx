@@ -14,6 +14,8 @@ WebSockets are designed to minimize latency and increase efficiency, and are sui
 
 :::note
 At the moment, this module is exclusively accessible to subscribers of the **Enterprise** and **Mission Critical** Service Plans. [Contact the Support team](https://tickets.azion.com/en/support/loginen/support/login/new) to request access to this module. 
+
+If you need to upgrade your plan to access the WebSocket module, please engage with our sales team to discuss plan options that best suit your needs. Plan upgrades can be managed through the billing section of the RTM. [TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO MANAGE PLAN UPGRADES THROUGH THE BILLING SECTION OF THE RTM]
 :::
 
 Due to their nature as a bidirectional open connection, WebSocket Proxy is incompatible with the use of the [Edge Functions](/en/documentation/products/build/edge-application/edge-functions/) and [Image Processor](/en/documentation/products/build/edge-application/image-processor/) modules. WebSocket connections won't work in conjunction with [Edge Cache](/en/documentation/products/build/edge-application/edge-cache/) or [Tiered Cache](/en/documentation/products/build/edge-application/tiered-cache/).
@@ -56,5 +58,3 @@ These are the **default limits**:
 | Maximum connection time¹ | 15 minutes |
 
 > ¹ Azion recycles [keepalive connections](/en/documentation/products/build/edge-application/#keepalive-timeout) on its servers approximately every *15 minutes*. Active WebSocket connections may be terminated if they exceed this range. In such cases, your application should handle these scenarios and reestablish the connection as needed.
-
-
