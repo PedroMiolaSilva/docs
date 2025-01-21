@@ -34,6 +34,25 @@ Azion also supports **Certificate Revocation List (CRL)** via [Azion API](https:
 
 ---
 
+## Verifying TLS Status and Configuration
+
+To verify the existing TLS status and configuration for your domain, such as `ferramentas.credipronto.com.br`, you can use the following steps:
+
+1. **Access Azion Console**: Log in to your Azion account and navigate to the **Digital Certificates** section.
+2. **Check Certificate Status**: Find your domain in the list and check the status of the linked certificate.
+3. **Review Certificate Details**: Click on the certificate to view details such as the validity period, issuer, and any associated Subject Alternative Names (SANs).
+
+If your domain does not have a TLS certificate, follow the procedure to add one using one of the available options (Azion SAN, Custom, Let's Encrypt).
+
+## Permission Limitations
+
+Certain actions related to TLS configuration may require specific permissions within Azion Console:
+
+- **Viewing Certificate Details**: Requires read access to the Digital Certificates section.
+- **Adding or Modifying Certificates**: Requires write access. If you lack permission, contact your Azion account administrator to request access or perform the changes on your behalf.
+
+---
+
 ## Azion SAN certificate
 
 When using Azion **Edge Application**, our TLS certificate for HTTPS traffic is available at no additional cost. When you create a domain for an edge application in [Azion Console](https://console.azion.com), your application is assigned an address in the `azionedge.net` zone.
@@ -153,5 +172,3 @@ You can't delete a CRL that's associated with a domain. You must first remove th
 ## Trademarks
 
 [Let's Encrypt](https://letsencrypt.org/) is a trademark of [Internet Security Research Group](https://www.abetterinternet.org/). All rights reserved.
-
-
