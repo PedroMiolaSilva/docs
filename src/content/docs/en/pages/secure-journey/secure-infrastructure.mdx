@@ -15,7 +15,9 @@ import InterfaceNote from '~/includes/snippets/InterfaceNote/en/snippet.mdx'
 
 Once you've [created an edge firewall and secured your application](/en/documentation/products/secure/secure-application/), you can use **Origin Shield** to secure your infrastructure by blocking threats.
 
-Origin Shield works as a list of IP/CIDR addresses used in Azion's Edge, thus providing assurance of safe IPs to allow access. The list is maintained by Azion and available via Azion Console and API, but each client must create automation to guarantee their security policies are always up-to-date with the Origin Shield addresses.
+Origin Shield works as a list of IP/CIDR addresses used in Azion's Edge, thus providing assurance of safe IPs to allow access. The list is maintained by Azion and available via Azion Console and API, but each client must create automation to ensure their security policies are always up-to-date with the Origin Shield addresses.
+
+It is important to note that IP addresses in the Origin Shield can change frequently. When new IP addresses are added, they are quarantined, meaning they are isolated for a period to ensure stability and security before being fully integrated. This process requires clients to adjust their firewall configurations accordingly to accommodate the new addresses.
 
 ---
 
@@ -98,3 +100,5 @@ Clients with Origin Shield receive an email every time the list is updated and h
 ## Step 3. Automate new address additions
 
 After having access and checking the list of IP addresses provided by Origin Shield, you can create an automation with Rules Engine, ensuring your infrastructure is always protected with the most recent version of safe IPs.
+
+[TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO MANAGE FIREWALL CONFIGURATIONS FOR NEW IP ADDITIONS]
