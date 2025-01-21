@@ -40,6 +40,8 @@ When using Azion **Edge Application**, our TLS certificate for HTTPS traffic is 
 
 If you wish, you may use the assigned domain to deliver your static content over HTTPS, avoiding the costs of issuing TLS certificates for approval environments or URLs whose domain can be shared with other Azion customers. This way, your domain will be registered as a Subject Alternative Name (SAN) under Azion's TLS certificate.
 
+By default, Azion supports secure connections on port 443 and utilizes a minimum TLS version of 1.2 for enhanced security.
+
 ---
 
 ## Edge certificate
@@ -153,5 +155,3 @@ You can't delete a CRL that's associated with a domain. You must first remove th
 ## Trademarks
 
 [Let's Encrypt](https://letsencrypt.org/) is a trademark of [Internet Security Research Group](https://www.abetterinternet.org/). All rights reserved.
-
-
