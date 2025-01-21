@@ -129,7 +129,7 @@ Send your request. You’ll receive a response similar to this:
         "ts": "2023-02-15T17:52:16Z",
         "remoteAddress": "00.00.000.00",
         "requestUri": "/get",
-        "stacktrace": "{\\\"edge_application_response\\\":[\\\"Add Azion Cookie\\\"],\\\"edge_firewall\\\":[\\\"Set WAF\\\",\\\"Rate-Limit Root\\\"],\\\"edge_application_request\\\":[\\\"Default Rule\\\",\\\"Test Send Cert to Origin 1\\\",\\\"Test Send Cert to Origin 2\\\"]}"
+        "stacktrace": "{\"edge_application_response\":[\"Add Azion Cookie\"],\"edge_firewall\":[\"Set WAF\",\"Rate-Limit Root\"],\"edge_application_request\":[\"Default Rule\",\"Test Send Cert to Origin 1\",\"Test Send Cert to Origin 2\"]}"
       }
     ]
   }
@@ -137,6 +137,32 @@ Send your request. You’ll receive a response similar to this:
 ```
 
 In this example, the **GraphQL API** has returned all active request and response phase rules created for **Edge Application**, as well as an active **Edge Firewall** rule set.
+
+**Regex Functionality:**
+At this time, the ability to query requests using a regex configured in the rate limit is not available. Instead, you can use the `LIKE` operator for filtering.
+
+**Using the LIKE Operator in GraphQL:**
+To filter using the `LIKE` operator, modify the GraphQL query as follows:
+
+```graphql
+query HttpQuery {
+  httpEvents(
+    limit: 10,
+    filter: {
+      requestUri: {like: "%/example/path%"}
+    }
+    orderBy: [ts_ASC]
+  ) 
+  {
+    ts
+    remoteAddress
+    requestUri
+    stacktrace
+  }
+}
+```
+
+This query filters requests where the `requestUri` contains the path `/example/path`. The `%` symbol is used as a wildcard character.
 
 For more information on the **GraphQL API**, visit the [datasets documentation page](/en/documentation/devtools/graphql-api/features/#datasets).
 
@@ -276,5 +302,3 @@ In this example, the **traceback** field contains all active request and respons
 :::note
 The `Set WAF [Your WAF]` Edge Firewall behavior performs special processing, allowing other rules to be processed simultaneously. As a result, logs may display other rules in the `traceback` field, even if the WAF Rule Set is configured to block and return the request.  However, the WAF rules operate correctly, blocking requests that match the specified criteria. This behavior is standard for the platform.
 :::
-
-
