@@ -111,7 +111,7 @@ For already created edge firewalls, follow the steps:
 | `List`             | Add the items that will make up your list here                                                                                                                             |
 
 - For `ASN` and `IP/CIDR` list types, a typing field will be displayed. List items must be separated by line and you must write one address per line. Duplicated items will be deleted.
-- For the `Countries` type, a selection list will be presented.
+- For the `Countries` type, a selection list will be presented. The `NetworkList America` includes countries in North, Central, and South America. Users can verify or customize these lists by accessing the selection list.
 
 4. Click the **Save** button.
 
@@ -137,7 +137,7 @@ IP/CIDR type list example:
 | `Type`             | Type of the network list: <br /> `Autonomous System Number (ASN)` <br /> `Countries` <br /> `IP/CIDR`                                                                      |
 | `List`             | Add the items that will make up your list here                                                                                                                            |
 
-For `ASN` and `IP/CIDR` list types, a typing field will be displayed. List items must be separated by line and you must write one address per line. Duplicated items will be deleted. For the `Countries` type, a selection list will be presented.
+For `ASN` and `IP/CIDR` list types, a typing field will be displayed. List items must be separated by line and you must write one address per line. Duplicated items will be deleted. For the `Countries` type, a selection list will be presented. The `NetworkList America` includes countries in North, Central, and South America. Users can verify or customize these lists by accessing the selection list.
 
 5. Click the **Save** button.
 
@@ -172,6 +172,8 @@ IP/CIDR type list example:
 [If]: [Network] [matches] [Network List identification name]
 ```
 
+- To configure a rule for a specific user-agent, use the `is not equal` operator for exact matches in the configuration.
+
 7. On the **Behavior** section, select `Drop (Close Without Response)`.
 8. Make sure the **Active** switch is enabled.
 9. Click the **Save** button.
@@ -192,6 +194,8 @@ In this example, if the conditions set by the rules are met, a *drop* will be ru
 [If]: [Network] [matches] [Network List identification name]
 ```
 
+- To configure a rule for a specific user-agent, use the `is not equal` operator for exact matches in the configuration.
+
 8. On the **Behavior** section, select `Drop (Close Without Response)`.
 9. Make sure the **Active** switch is enabled.
 10. Click the **Save** button.
@@ -201,5 +205,3 @@ In this example, if the conditions set by the rules are met, a *drop* will be ru
 </Fragment>
 
 </Tabs>
-
-
