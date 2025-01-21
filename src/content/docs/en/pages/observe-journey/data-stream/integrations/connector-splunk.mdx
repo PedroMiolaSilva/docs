@@ -84,7 +84,7 @@ After saving the configurations, your data will be streamed to the newly configu
 
 You can keep track of the calls made by Data Stream to Splunk on [Real-Time Events](/en/documentation/products/observe/real-time-events/). To do so, select **Data Source** > **Data Stream** and choose the filters options as you wish.
 
-Learn how to use  Splunk to receive data from Data Stream. Watch the video below:
+Learn how to use Splunk to receive data from Data Stream. Watch the video below:
 
 <div class="cms-embed">
   <iframe width="600" height="400" src="https://www.youtube.com/embed/VT0JYYG7Rcw?si=Kqt5iec_p58PJvv-" loading="lazy" title="How to use Splunk to receive data from Data Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -92,10 +92,37 @@ Learn how to use  Splunk to receive data from Data Stream. Watch the video below
 
 ---
 
+## Retrieving Logs with GraphQL Queries
+
+To obtain logs related to a specific date, such as 11/10, for ingestion into Splunk, you can use GraphQL queries to filter logs by date and other parameters.
+
+### Using GraphQL for Log Retrieval
+
+1. **Access Azion’s Console or Real Time Manager**:
+   - Navigate to the log management section.
+2. **Construct Your GraphQL Query**:
+   - Use the following example query to filter logs by date:
+   
+     ```graphql
+     {
+       logs(filter: {date: "2023-11-10"}) {
+         timestamp
+         message
+         [TECHWRITER TODO: INSERT ADDITIONAL FIELDS BASED ON USER NEEDS]
+       }
+     }
+     ```
+3. **Execute the Query**:
+   - Run the query in the GraphQL interface provided in the console.
+4. **Export and Ingest into Splunk**:
+   - After retrieving the logs, export them in a compatible format for Splunk ingestion.
+   - Use Splunk's data input options to ingest the exported logs.
+
+### Additional Resources
+
+- Refer to the [GraphQL API documentation](https://www.azion.com/en/documentation/graphql-api/) for more details on constructing queries.
+
 ### Trademarks
 
 [Splunk](https://www.splunk.com/) is a registered trademark of Splunk Inc in the United States and other countries.
-
-
-
 
