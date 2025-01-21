@@ -92,4 +92,34 @@ See the list of all available internal rules below:
 | 1402    | Possible trick to evade protection: encoded chars `%20-%3F` found in Body, Path, Query String or Cookies.                                  |
 | 1500    | Possible File Upload attempt: `asp/php` or `.ph`, `.asp`, `.ht` found in filename in a multipart POST containing a file.                   |
 
+## Performing Log Queries
+
+To perform log queries using regex configured in the rate limit for file extensions like .js, .css, and .png, there are limitations to using regex directly. Instead, it is recommended to use the `LIKE` parameter for more effective log queries.
+
+### Using the LIKE Parameter
+
+To query for specific file extensions such as `.js`, `.css`, and `.png`, you can structure your query using the `LIKE` parameter. Here’s an example:
+
+```graphql
+{
+  logs(filter: {field: "extension", value: "%.js", operator: "LIKE"}) {
+    field1
+    field2
+    // add your desired fields
+  }
+}
+```
+
+This query will allow you to search for logs related to `.js` files. You can adjust the `value` parameter for `.css` or `.png` files accordingly.
+
+### Enabling Debug Rules
+
+To improve rule visibility in logs for Edge Applications and Edge Firewall, enabling Debug Rules is essential. Follow these steps:
+
+1. Navigate to your Edge Application settings.
+2. Locate the Debug Rules option.
+3. Enable Debug Rules to enhance logging capabilities and provide better insights into rule processing.
+
+[TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO ENABLE DEBUG RULES IN EDGE APPLICATIONS AND EDGE FIREWALL]
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uhpoeBXLvxk?si=eb8Jx_LRaUq1FBlh" loading="lazy" title="Custom allowed rules Web Application Firewall" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
