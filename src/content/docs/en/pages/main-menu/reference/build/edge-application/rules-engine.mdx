@@ -86,6 +86,10 @@ For example, this criteria identifies whether a user is accessing your applicati
 | --- | ---- | --- | --- |
 | If | `${http_user_agent}` | *matches* | `(Chrome\|Mozilla)` |
 
+#### Using LIKE in Real-Time Events and GraphQL
+
+Azion allows the use of the 'LIKE' parameter as an alternative to regex when querying requests in Real-Time Events and GraphQL. This can be particularly useful for pattern matching within query operations.
+
 ### Variables
 
 Check the full list of variables available and their processing phase:
@@ -186,6 +190,7 @@ Azion also provides special variables that act as functions and take arguments. 
 | does not start with | The value of the variable doesn't start with the argument | string |
 | matches | The value of the variable matches the regular expression entered as an argument | regular expression |
 | does not match | The value of the variable doesn't match the regular expression entered as an argument | regular expression |
+| LIKE | The value of the variable matches the pattern using the LIKE operator, similar to SQL | string |
 | exists | The variable has a defined value. Example: `${arg_search}` exists if a search parameter was sent in the query string | - |
 | does not exist | The variable doesn't have a defined value. Example: `${arg_search}` doesn't exist if a search parameter wasn't sent in the query string | - |
 
@@ -448,6 +453,11 @@ Before configuring this behavior, you must set up your origins using [Origins](/
 ## Debugging rules
 
 You can [debug rules created with Rules Engine](/en/documentation/products/guides/debug-rules/) created in **Rules Engine for Edge Application** through the **GraphQL API**, **Data Stream**, or **Real-Time Events**.
+
+
+### Enabling Debug Rules
+
+To enhance logging and identify rule execution, enable Debug Rules in the **Edge Application** and **Edge Firewall**. This will allow you to gain insights into rule processing and aid in troubleshooting.
 
 ---
 
