@@ -145,4 +145,26 @@ After saving the configuration, on the same page, the tabs **Functions** and **R
 It might take a while for your changes to propagate.
 :::
 
+---
 
+## Automating Configuration with Azion's API and Terraform Provider
+
+To automate the setup of edge applications and firewall rules, Azion provides integration with its API and a Terraform Provider.
+
+### Using Azion's API
+
+1. Access the [Azion API Documentation](https://www.azion.com/en/documentation/products/api/) to find detailed information on the available endpoints.
+2. Authenticate your API requests using your credentials.
+3. Use the API endpoints to create and configure edge functions and firewall rules programmatically.
+   - For example, the API can be used to create edge functions, add them to the firewall, and set up rules.
+
+### Utilizing Azion's Terraform Provider
+
+1. Install Terraform and the Azion Terraform Provider by following the [installation guide](https://registry.terraform.io/providers/azion/azion/latest/docs).
+2. Define your infrastructure as code using Terraform scripts.
+3. Use the Azion Terraform Provider resources to automate the creation of edge functions and firewall configurations.
+   - Specify the necessary configurations in `.tf` files and apply them using Terraform commands.
+
+[TECHWRITER TODO: INSERT INFORMATION ABOUT HOW TO CONFIGURE SPECIFIC TEMPLATES AND EXAMPLES USING AZION'S API AND TERRAFORM PROVIDER]
+
+By leveraging these tools, you can automate the process of setting up and managing your edge applications and firewall rules efficiently.
