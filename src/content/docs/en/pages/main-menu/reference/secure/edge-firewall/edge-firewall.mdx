@@ -1,8 +1,8 @@
 ---
 title: Edge Firewall
 description: >-
-  Azion Edge Firewal is a security product that protects from the network layer
-  to the application layer.
+  Azion Edge Firewall is a security product that protects from the network layer
+to the application layer.
 meta_tags: 'edge firewall, edge computing, security'
 namespace: documentation_products_edge_firewall
 permalink: /documentation/products/secure/edge-firewall/
@@ -57,6 +57,10 @@ You need to activate at least one for the edge firewall to work.
 After activating the modules you want, you must configure your security rules in the **Rules Engine** tab. The rules you configure will run sequentially until the request is blocked or restricted or until all your rules are processed, at which point the request is released. The request's data stream only passes onto your edge application if none of your Edge Firewall rules block or reject the request, ensuring that malicious requests don't reach your application.
 
 Each rule is made of *Criteria* (conditionals) and *Behaviors* (commands). The *Behaviors* setup will run if the conditions are met. For example, you can set up rules to block requests that come from IPs that are in a *blocklist* or even make up rules to exclude IPs that are in the allowed rules list. In this example, “block” is the Behavior, while the IP of the request is in the *blocklist* and not present in the *allowed rules* is the condition (Criteria).
+
+To create rules for specific network lists, such as for "America," note that the "America" Network list includes only four specific countries from South America. [TECHWRITER TODO: INSERT INFORMATION ABOUT WHICH COUNTRIES ARE INCLUDED]
+
+For user-agent rules, you can utilize conditions such as 'does not match' or 'is not equal' to filter requests. For instance, to set a rule for the user-agent `OpenFinanceFVP/1.0`, you might configure criteria to block requests where the user-agent does not match or is not equal to `OpenFinanceFVP/1.0`.
 
 <LinkButton link="/en/documentation/products/secure/edge-firewall/rules-engine/" label="go to Rules Engine reference" severity="secondary" />
 
@@ -147,4 +151,3 @@ These are the **default limits**:
 | IP/CIDR in a network list | 20,000 lines |
 | Web Application Firewall | 128 kB |
 | Domains per edge firewall | 200 |
-
