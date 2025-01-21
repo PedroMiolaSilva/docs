@@ -85,6 +85,10 @@ curl --location 'https://api.azionapi.net/edge_services/' \
 --header 'Authorization: Token [TOKEN VALUE]'
 ```
 
+:::note
+For retrieving all Edge Applications in a single call, consider using the `page_size` query string with a suggested value of `page_size=300`.
+:::
+
 2. Run the following `POST` request in your terminal:
 
 ```bash 
@@ -115,6 +119,14 @@ Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI spe
 </Fragment>
 
 </Tabs>
+
+## Internal Script Sharing Policy and Environment Creation
+
+Azion has a policy regarding the sharing of internal scripts to ensure the protection of intellectual property. As a result, internal scripts used for environment creation are not shared externally.
+
+For users looking to create environments, we recommend utilizing the Azion API, Console, or Real-Time Manager (RTM) as flexible tools to configure and deploy resources according to your needs.
+
+[TECHWRITER TODO: INSERT INFORMATION ABOUT ALTERNATIVE SOLUTIONS FOR CREATING ENVIRONMENTS AND ADDRESSING INTELLECTUAL PROPERTY CONCERNS]
 
 import LinkButton from 'azion-webkit/linkbutton'
 
